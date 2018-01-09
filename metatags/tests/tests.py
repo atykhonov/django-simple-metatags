@@ -1,8 +1,6 @@
 from django.test import TestCase
 from django.contrib.auth import get_user_model
 
-from metatags.utils import truncate_language_code
-
 
 class DjangoDummyHttpRequest(object):
 
@@ -11,11 +9,6 @@ class DjangoDummyHttpRequest(object):
 
 
 class TestMetaTags(TestCase):
-
-    def test_truncate_language_code(self):
-        self.assertEqual(truncate_language_code('/en/'), '/')
-        self.assertEqual(truncate_language_code('/end/'), '/end/')
-        self.assertEqual(truncate_language_code('/en/services/'), '/services/')
 
     def test_get_meta_tags_for_object(self):
         from metatags.models import MetaTag

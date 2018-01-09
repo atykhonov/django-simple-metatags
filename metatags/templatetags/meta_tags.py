@@ -2,7 +2,6 @@ from django.template import Library
 from django.utils.encoding import force_text
 
 from metatags.models import MetaTag
-from metatags.utils import truncate_language_code
 
 
 register = Library()
@@ -33,7 +32,7 @@ def include_meta_tags(context, model_instance=None, model_title_field='title',
     else:
         # Getting meta tags for an URL-path.
         try:
-            url_path = truncate_language_code(context['request'].path_info)
+            url_path = context['request'].path_info
             meta_tags = MetaTag.objects.get(url=url_path)
             meta_tags.title = meta_tags.title or default_title
             meta_tags.keywords = meta_tags.keywords or default_keywords
