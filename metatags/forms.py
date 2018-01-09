@@ -8,7 +8,7 @@ from .models import MetaTag
 class InlineMetaTagForm(forms.ModelForm):
 
     class Meta:
-        fields = ('title', 'description')
+        fields = ('title', 'description', 'h1')
 
     @property
     def media(self):
@@ -27,7 +27,7 @@ class MetaTagForm(InlineMetaTagForm):
                                                         "underscores, dashes, slashes or tildes.")})
 
     class Meta:
-        fields = ('url', 'title', 'description')
+        fields = ('url', 'title', 'description', 'h1')
 
     def clean_url(self):
         url = self.cleaned_data['url']
