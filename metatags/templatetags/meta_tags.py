@@ -44,3 +44,13 @@ def include_meta_tags(context, model_instance=None, model_title_field='title',
                 'description': default_description
             }
     return {'meta_tags': meta_tags}
+
+
+@register.simple_tag(takes_context=True)
+def meta_tag_h1(context, *args, **kwargs):
+    try:
+        url_path = context['request'].path_info
+        meta_tags = MetaTag.objects.get(url=url_path)
+        return meta_tags.h1
+    except MetaTag.DoesNotExist:
+        return ''
