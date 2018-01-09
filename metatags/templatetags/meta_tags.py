@@ -40,7 +40,7 @@ def include_meta_tags(context, model_instance=None, model_title_field='title',
         except MetaTag.DoesNotExist:
             meta_tags = {
                 'title': default_title,
-                'keywords': default_h1,
+                'h1': default_h1,
                 'description': default_description
             }
     return {'meta_tags': meta_tags}
