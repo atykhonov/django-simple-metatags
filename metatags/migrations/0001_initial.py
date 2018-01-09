@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
                 ('url', models.CharField(max_length=100, verbose_name='URL-path', blank=True)),
                 ('object_id', models.PositiveIntegerField(null=True)),
                 ('title', models.CharField(max_length=80, verbose_name='title', blank=True)),
-                ('keywords', models.CharField(max_length=250, verbose_name='keywords', blank=True)),
+                ('h1', models.CharField(max_length=250, verbose_name='H1', blank=True)),
                 ('description', models.TextField(verbose_name='description', blank=True)),
                 ('content_type', models.ForeignKey(to='contenttypes.ContentType', null=True)),
             ],

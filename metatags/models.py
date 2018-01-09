@@ -13,8 +13,8 @@ class MetaTag(models.Model):
     object_id = models.PositiveIntegerField(null=True)
     content_object = GenericForeignKey()
     title = models.CharField(_('title'), max_length=80, blank=True)
-    keywords = models.CharField(_('keywords'), max_length=250, blank=True)
     description = models.TextField(_('description'), blank=True)
+    h1 = models.CharField(_('H1'), max_length=250, blank=True)
 
     class Meta:
         ordering = ('id',)

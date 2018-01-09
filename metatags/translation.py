@@ -4,6 +4,6 @@ from .models import MetaTag
 
 
 class MetaTagTranslationOptions(TranslationOptions):
-    fields = ('title', 'keywords', 'description')
+    fields = ('title', 'h1', 'description')
 
 translator.register(MetaTag, MetaTagTranslationOptions)
